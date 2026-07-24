@@ -1,0 +1,32 @@
+name: ci for lint and prettier
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: clone the code
+        uses: actions/checkout@v4
+
+      - name: setup node
+        uses: action/setup-node@v4
+
+      - name: install depencies
+        run: npm install
+
+      - name: fix prettier issues
+        run: pnpm run format
+
+      - name: check prettier format
+        run: npm run prettier check
+        
+      - name: run eslint
+        run: npm run lint
+
+      - name: build projec
+        run : npm run build
