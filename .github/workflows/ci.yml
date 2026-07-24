@@ -20,7 +20,7 @@ jobs:
         run: npm install
 
       - name: fix prettier issues
-        run: pnpm run format
+        run: npm run format
 
       - name: check prettier format
         run: npm run prettier check
