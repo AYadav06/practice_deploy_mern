@@ -1,4 +1,4 @@
-name: ci for prettier
+name: CI for prettier
 on:
   push:
     branches:
