@@ -1,7 +1,27 @@
 import express from "express";
-
+import { client } from "./db";
 const app = express();
 
+
+app.use(express.json());
+
+app.get("/",async(req,res)=>{
+  const user= await client.user.findMany();
+
+  res.json({
+    user
+  })
+})
+
+app.post("/",async(req,res)=>{
+  const user= await client.user.create({
+    data:{
+      id:Math.random.toString(),
+      name:Math.random.toString(),
+      password:Math.random.toString()
+    }
+  })
+})
 app.listen(3000, () => {
   console.log("server is running ...");
 });
