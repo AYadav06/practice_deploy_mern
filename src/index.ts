@@ -5,10 +5,10 @@ const app = express();
 app.use(express.json());
 
 app.get("/", async (req, res) => {
-  const user = await client.user.findFirst();
+ 
 
   res.json({
-    message: "user is at :",
+    message: "hello ",
   });
 });
 
