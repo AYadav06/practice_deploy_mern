@@ -6,8 +6,8 @@
   "type": "commonjs",
   "scripts": {
     "build": "tsc",
-    "prisma:generate":"",
-    "dev:docker":"npx prisma migrate deploy && node dist/index.js",
+    "prisma:generate": "",
+    "dev:docker": "npx prisma migrate deploy && node dist/index.js",
     "dev": "tsx watch src/index.ts",
     "start": "npm run build && node dist/index.js",
     "format": "prettier . --write",
