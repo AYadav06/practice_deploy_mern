@@ -9,7 +9,6 @@ app.get("/", async (req, res) => {
 
   res.json({
     message: "user is at :",
-    user,
   });
 });
 
