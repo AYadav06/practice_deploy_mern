@@ -8,7 +8,7 @@ app.get("/", async (req, res) => {
   const user = await client.user.findMany();
 
   res.json({
-    message: "user is :",
+    message: "user is at :",
     user,
   });
 });
