@@ -9,8 +9,8 @@
  * 🟢 You can import this file directly.
  */
 import type * as runtime from "@prisma/client/runtime/client"
-import type * as $Enums from "../enums.js"
-import type * as Prisma from "../internal/prismaNamespace.js"
+import type * as $Enums from "../enums"
+import type * as Prisma from "../internal/prismaNamespace"
 
 /**
  * Model User
@@ -176,12 +176,12 @@ export type UserOrderByWithRelationInput = {
 
 export type UserWhereUniqueInput = Prisma.AtLeast<{
   id?: string
-  name?: string
   AND?: Prisma.UserWhereInput | Prisma.UserWhereInput[]
   OR?: Prisma.UserWhereInput[]
   NOT?: Prisma.UserWhereInput | Prisma.UserWhereInput[]
+  name?: Prisma.StringFilter<"User"> | string
   password?: Prisma.StringFilter<"User"> | string
-}, "id" | "name">
+}, "id">
 
 export type UserOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
@@ -202,13 +202,13 @@ export type UserScalarWhereWithAggregatesInput = {
 }
 
 export type UserCreateInput = {
-  id: string
+  id?: string
   name: string
   password: string
 }
 
 export type UserUncheckedCreateInput = {
-  id: string
+  id?: string
   name: string
   password: string
 }
@@ -226,7 +226,7 @@ export type UserUncheckedUpdateInput = {
 }
 
 export type UserCreateManyInput = {
-  id: string
+  id?: string
   name: string
   password: string
 }

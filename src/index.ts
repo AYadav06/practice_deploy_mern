@@ -16,10 +16,12 @@ app.get("/",async(req,res)=>{
 app.post("/",async(req,res)=>{
   const user= await client.user.create({
     data:{
-      id:Math.random.toString(),
-      name:Math.random.toString(),
-      password:Math.random.toString()
+    name:Math.random.toString(),
+    password:Math.random.toString()
     }
+  })
+  res.json({
+    user
   })
 })
 app.listen(3000, () => {
