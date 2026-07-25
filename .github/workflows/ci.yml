@@ -1,4 +1,4 @@
-name: CI for prettier
+name: CI
 on:
   push:
     branches:
@@ -18,9 +18,6 @@ jobs:
 
       - name: install depencies
         run: npm install
-
-      - name: fix prettier issues
-        run: npm run format
 
       - name: check prettier format
         run: npm run format:check
