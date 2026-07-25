@@ -8,6 +8,7 @@ app.get("/", async (req, res) => {
   const user = await client.user.findMany();
 
   res.json({
+    message: "user is :",
     user,
   });
 });
@@ -20,9 +21,10 @@ app.post("/", async (req, res) => {
     },
   });
   res.json({
-    user,
+    message: "user is created",
   });
 });
+
 app.listen(3000, () => {
   console.log("server is running ...");
 });
